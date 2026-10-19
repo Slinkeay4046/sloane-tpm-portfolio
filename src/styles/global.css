@@ -4,6 +4,12 @@
   --accent-light: #c561f6; --accent: #7611a6; --accent-dark: #1c0056;
   --font-body: "Public Sans", system-ui, sans-serif; --font-brand: Rubik, system-ui, sans-serif;
 }
+
+/* Keep the portrait as a supporting element beside the introduction on tablet and desktop. */
+@media (min-width: 40em) {
+  .home-hero { grid-template-columns: minmax(0, 1fr) minmax(13rem, 19rem); }
+  .profile-photo { width: min(100%, 19rem); max-height: 25rem; }
+}
 :root.theme-dark { --gray-0:#fff; --gray-100:#e3e6ee; --gray-200:#c3cadb; --gray-300:#a3acc8; --gray-400:#8490b5; --gray-800:#283044; --gray-999:#090b11; }
 * { box-sizing: border-box; margin: 0; }
 html, body { min-height: 100%; overflow-x: hidden; }
