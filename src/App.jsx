@@ -38,20 +38,22 @@ const projects = [
     theme: 'blue'
   },
   {
-    id: 'modernization', number: '03', eyebrow: 'FEDERAL APPLICATION MODERNIZATION', title: 'Engineering delivery in regulated cloud environments',
+    id: '3plta', number: '03', eyebrow: 'APPLICATION SECURITY & TECHNICAL PROGRAM DELIVERY', title: '3PLTA — Third-Party Dependency Package Remediation',
     org: 'Oracle Health', period: '2023 — Present', category: 'Technical Delivery',
-    description: 'Supporting application modernization, production improvements, and technical changes across federal and enterprise healthcare systems.',
-    tags: ['Cloud / OCI', 'Technical risk', 'CI/CD'],
-    situation: 'Modernizing regulated applications involves balancing reliability, security, infrastructure dependencies, and production continuity.',
-    ownership: 'Software engineer and integrated technology consultant/architect, contributing to technical implementation and cross-team collaboration. Formal program ownership is not claimed.',
+    description: 'Contributed to enterprise application security and modernization through third-party dependency vulnerability remediation, package upgrades, compatibility testing, and release validation.',
+    tags: ['Security remediation', 'Dependency management', 'Release validation'],
+    situation: 'Known third-party package vulnerabilities and runtime compatibility changes required focused remediation while preserving enterprise application stability and release readiness.',
+    ownership: 'Software engineering contributor responsible for technical risk identification, vulnerability remediation, compatibility testing, and release validation in collaboration with engineering workflows. Formal ownership of the overall remediation program is not claimed.',
     approach: [
-      'Contributed to application work involving React, Node.js/Express, Oracle SQL, and backend integrations.',
-      'Supported cloud and DevOps activities involving OCI, containers, Kubernetes/OKE, and Jenkins pipelines.',
-      'Worked on access controls, administrative workflows, production defects, and dependency upgrades.',
-      'Translated technical requirements into implementation tasks alongside engineering and architecture stakeholders.'
+      'Identified and remediated vulnerable third-party dependencies in enterprise applications.',
+      'Updated packages including Express, AJV, qs, and minimatch, prioritizing vulnerability and compatibility considerations.',
+      'Supported Node.js runtime upgrades and resolved related compatibility issues.',
+      'Used Jenkins CI/CD pipelines and Git-based workflows to support testing, deployment, and release management.',
+      'Performed regression testing and troubleshooting to validate application stability and quality assurance.',
+      'Collaborated within engineering workflows to address security, maintainability, and technical decision-making requirements.'
     ],
-    outcome: 'Contributed to production application improvements and cloud-modernization activities. Project-specific delivery metrics can be added after verification.',
-    artifact: 'Suggested supporting artifacts: sanitized migration phases, dependency register, decision log, and release checklist.',
+    outcome: 'Improved application security posture, dependency maintainability, and release readiness while reducing exposure to known third-party package vulnerabilities.',
+    artifact: 'Suggested supporting artifacts: sanitized dependency register, vulnerability-prioritization log, compatibility test plan, and release-validation checklist.',
     theme: 'peach'
   }
 ];
@@ -126,7 +128,7 @@ function App() {
           <div className="section-intro"><h2>Work at the intersection<br/>of <em>people & systems.</em></h2><p>A selection of technical initiatives covering product direction, implementation coordination, and enterprise software delivery.</p></div>
           <div className="filters" aria-label="Filter case studies">{['All','Product & Platform','Program Delivery','Technical Delivery'].map(x => <button key={x} className={filter === x ? 'filter active' : 'filter'} onClick={() => setFilter(x)} aria-pressed={filter === x}>{x}</button>)}</div>
           <div className="project-grid">{filtered.map(p => <button className={`project-card theme-${p.theme}`} key={p.id} onClick={() => openProject(p.id)} aria-label={`Read case study: ${p.title}`}>
-            <div className="project-visual"><div className="visual-top"><span>{p.number} / CASE STUDY</span><span className="visual-arrow">↗</span></div><div className="visual-center"><span className="visual-ring ring-outer"/><span className="visual-ring ring-inner"/><div className="visual-inside">{p.id === 'knx' ? 'KNX' : p.id === 'ecr' ? 'eCR' : 'OCI'}<small>{p.id === 'knx' ? 'PLATFORM' : p.id === 'ecr' ? 'DELIVERY' : 'SYSTEMS'}</small></div></div><div className="visual-bottom">{p.org.toUpperCase()}</div></div>
+            <div className="project-visual"><div className="visual-top"><span>{p.number} / CASE STUDY</span><span className="visual-arrow">↗</span></div><div className="visual-center"><span className="visual-ring ring-outer"/><span className="visual-ring ring-inner"/><div className="visual-inside">{p.id === 'knx' ? 'KNX' : p.id === 'ecr' ? 'eCR' : '3PLTA'}<small>{p.id === 'knx' ? 'PLATFORM' : p.id === 'ecr' ? 'DELIVERY' : 'SECURITY'}</small></div></div><div className="visual-bottom">{p.org.toUpperCase()}</div></div>
             <div className="project-content"><div className="project-meta"><span>{p.org}</span><span>{p.period}</span></div><h3>{p.title}</h3><p>{p.description}</p><div className="tag-row">{p.tags.map(t=><span key={t}>{t}</span>)}</div><div className="project-link">Explore case study <Arrow diagonal /></div></div>
           </button>)}</div>
           <p className="confidential-note">Case studies use public-facing summaries. Internal systems, confidential records, and sensitive client details are excluded.</p>
