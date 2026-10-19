@@ -1,0 +1,5 @@
+---
+import type { CollectionEntry } from 'astro:content';
+const { project } = Astro.props as { project: CollectionEntry<'work'> };
+---
+<a class:list={['card', project.data.accent]} href={`/projects/${project.id}/`}><span class="label">{project.data.organization}</span><span class="title">{project.data.title}</span><span class="role">{project.data.role}</span><span class="orb" aria-hidden="true"></span></a>
