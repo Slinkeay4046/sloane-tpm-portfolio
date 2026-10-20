@@ -37,7 +37,7 @@ No server-side environment variables are required for this static deployment.
 
 - Case studies live in `src/content/work/` and generate individual project pages.
 - The resume download is `public/Sloane_Davidson_Resume.pdf`.
-- Add a preferred public email address and/or LinkedIn URL in `src/pages/contact.astro` when available.
+- The public contact path is LinkedIn; no email address is displayed on the site.
 
 ## Accuracy and privacy
 
