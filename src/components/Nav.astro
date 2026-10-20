@@ -7,7 +7,7 @@ const links = [
 const active = (href: string) => Astro.url.pathname === href;
 ---
 <nav aria-label="Primary navigation">
-  <div class="menu-header"><a href="/" class="site-title"><span aria-hidden="true">✦</span> Sloane Davidson</a><button class="menu-button" aria-expanded="false" aria-controls="menu-content"><span class="sr-only">Menu</span>☰</button></div>
+  <div class="menu-header"><a href="/" class="site-title"><span aria-hidden="true">✦</span> Sloane Davidson</a><button class="menu-button" aria-expanded="false" aria-controls="menu-content"><span class="menu-button-label">Menu</span><span aria-hidden="true">☰</span></button></div>
   <div id="menu-content" class="menu-content">
     <ul class="nav-items">{links.map(({ label, href }) => <li><a aria-current={active(href) ? 'page' : undefined} href={href}>{label}</a></li>)}</ul>
     <div class="menu-footer"><a href="https://github.com/Slinkeay4046/sloane-tpm-portfolio" rel="noopener noreferrer">GitHub</a><button class="theme" type="button" aria-label="Toggle color theme">◐</button></div>
@@ -17,8 +17,14 @@ const active = (href: string) => Astro.url.pathname === href;
   const button = document.querySelector<HTMLButtonElement>('.menu-button')!;
   const menu = document.querySelector<HTMLElement>('#menu-content')!;
   const theme = document.querySelector<HTMLButtonElement>('.theme')!;
-  const sync = () => { const wide = matchMedia('(min-width: 50em)').matches; menu.hidden = !wide; button.hidden = wide; button.setAttribute('aria-expanded', String(wide)); };
-  button.addEventListener('click', () => { menu.hidden = !menu.hidden; button.setAttribute('aria-expanded', String(!menu.hidden)); });
+  const setMenu = (open: boolean) => {
+    menu.hidden = !open;
+    button.setAttribute('aria-expanded', String(open));
+    button.querySelector('.menu-button-label')!.textContent = open ? 'Close' : 'Menu';
+    button.querySelector('[aria-hidden]')!.textContent = open ? '×' : '☰';
+  };
+  const sync = () => { const wide = matchMedia('(min-width: 50em)').matches; button.hidden = wide; setMenu(wide); };
+  button.addEventListener('click', () => setMenu(menu.hidden));
   matchMedia('(min-width: 50em)').addEventListener('change', sync); sync();
   theme.addEventListener('click', () => { const dark = !document.documentElement.classList.contains('theme-dark'); document.documentElement.classList.toggle('theme-dark', dark); localStorage.setItem('theme', dark ? 'dark' : 'light'); });
 </script>
