@@ -10,7 +10,7 @@ const active = (href: string) => Astro.url.pathname === href;
   <div class="menu-header"><a href="/" class="site-title"><span aria-hidden="true">✦</span> Sloane Davidson</a><button class="menu-button" aria-expanded="false" aria-controls="menu-content"><span class="menu-button-label">Menu</span><span aria-hidden="true">☰</span></button></div>
   <div id="menu-content" class="menu-content">
     <ul class="nav-items">{links.map(({ label, href }) => <li><a aria-current={active(href) ? 'page' : undefined} href={href}>{label}</a></li>)}</ul>
-    <div class="menu-footer"><a href="https://github.com/Slinkeay4046/sloane-tpm-portfolio" rel="noopener noreferrer">GitHub</a><button class="theme" type="button" aria-label="Toggle color theme">◐</button></div>
+    <div class="menu-footer"><a href="https://github.com/Slinkeay4046" target="_blank" rel="noopener noreferrer">GitHub</a><button class="theme" type="button" aria-label="Toggle color theme">◐</button></div>
   </div>
 </nav>
 <script>
