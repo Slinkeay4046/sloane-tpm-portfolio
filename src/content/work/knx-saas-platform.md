@@ -22,4 +22,4 @@ I mapped the needs of each participant group into distinct roles and platform wo
 
 ## Outcome and lessons learned
 
-The work established a SaaS platform with core event, payment, role, and administration workflows. Product ownership reinforced the value of defining the system boundary early, sequencing dependencies deliberately, and keeping implementation choices tied to the user journey. Adoption and financial metrics are not published here.
+The work established a SaaS platform with core event, payment, role, and administration workflows. Performance improvements reduced multiple high-volume payloads by more than 99% and eliminated redundant per-card requests. Product ownership reinforced the value of defining the system boundary early, sequencing dependencies deliberately, and keeping implementation choices tied to the user journey.
