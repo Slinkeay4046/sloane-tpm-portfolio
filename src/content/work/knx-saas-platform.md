@@ -1,8 +1,8 @@
 ---
 title: KNX Technologies — SaaS Platform Development
-description: Founder-led product strategy and full-stack execution for a multi-role event platform.
+description: Product ownership and full-stack execution for a multi-role event platform.
 organization: KNX Technologies
-role: Founder and Full-Stack Engineer
+role: Product Owner
 publishDate: 2026-01-01
 tags: [Product strategy, React, Supabase, PostgreSQL, Stripe Connect]
 accent: violet
@@ -14,7 +14,7 @@ Community events often rely on disconnected tools for registration, payments, co
 
 ## My responsibilities
 
-As founder and full-stack engineer, I define product direction and roadmap priorities, translate user needs into product design and technical decisions, build the platform, and guide integration and implementation work.
+As product owner, I define product direction and roadmap priorities, translate user needs into product design and technical decisions, and guide integration and implementation work.
 
 ## Technical decisions and execution
 
@@ -22,4 +22,4 @@ I mapped the needs of each participant group into distinct roles and platform wo
 
 ## Outcome and lessons learned
 
-The work established a SaaS platform with core event, payment, role, and administration workflows. Building as both product owner and engineer reinforces the value of defining the system boundary early, sequencing dependencies deliberately, and keeping implementation choices tied to the user journey. Adoption and financial metrics are not published here.
+The work established a SaaS platform with core event, payment, role, and administration workflows. Product ownership reinforced the value of defining the system boundary early, sequencing dependencies deliberately, and keeping implementation choices tied to the user journey. Adoption and financial metrics are not published here.
