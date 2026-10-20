@@ -1,5 +1,5 @@
 ---
-title: KNX Technologies — SaaS Platform Development
+title: Multi-role SaaS Platform
 description: Product ownership and full-stack execution for a multi-role event platform.
 organization: KNX Technologies
 role: Product Owner
@@ -11,6 +11,8 @@ accent: violet
 ## The problem
 
 Community events often rely on disconnected tools for registration, payments, communication, and administration. Organizers, instructors, DJs, and attendees each need different permissions and workflows, yet their work must stay coordinated.
+
+The live platform is available at [knx-go.com](https://knx-go.com).
 
 ## My responsibilities
 
