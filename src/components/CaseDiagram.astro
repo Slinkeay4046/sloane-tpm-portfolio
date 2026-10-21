@@ -1,17 +1,45 @@
 ---
 const { project } = Astro.props as { project: string };
-const diagram = {
-  'knx-saas-platform': { caption: 'Product delivery flow', steps: ['Experience design', 'Platform workflows', 'Launch + iteration'] },
-  'oracle-ecr': { caption: 'Implementation delivery flow', steps: ['Kickoff + onboarding', 'Readiness + approvals', 'Soft + hard go-live'] },
-  'oracle-3plta-remediation': { caption: 'Remediation delivery flow', steps: ['Risk identification', 'Upgrade + compatibility test', 'Release validation'] },
-}[project] ?? { caption: 'Delivery flow', steps: ['Plan', 'Execute', 'Validate'] };
+
+const diagrams: Record<string, { caption: string; steps: string[] }> = {
+  'knx-saas-platform': {
+    caption: 'Product delivery flow',
+    steps: ['Discover', 'Prioritize', 'Build', 'Validate', 'Iterate'],
+  },
+  'oracle-ecr': {
+    caption: 'Generic eCR implementation lifecycle',
+    steps: ['Kickoff', 'Readiness', 'Approvals', 'Go-live', 'Monitor'],
+  },
+  'oracle-3plta-remediation': {
+    caption: 'Generic dependency remediation workflow',
+    steps: ['Identify risk', 'Assess impact', 'Upgrade', 'Test', 'Release validate'],
+  },
+};
+
+const diagram = diagrams[project] ?? { caption: 'Delivery flow', steps: ['Plan', 'Execute', 'Validate'] };
+const stepCount = diagram.steps.length;
+const width = 720;
+const cardWidth = stepCount === 5 ? 116 : 170;
+const gap = stepCount === 5 ? 28 : 55;
+const start = (width - (stepCount * cardWidth + (stepCount - 1) * gap)) / 2;
 ---
+
 <figure class="case-diagram">
   <svg viewBox="0 0 720 190" role="img" aria-label={diagram.caption}>
-    <line x1="175" y1="94" x2="295" y2="94" /><line x1="425" y1="94" x2="545" y2="94" />
+    {diagram.steps.slice(0, -1).map((_, index) => {
+      const x = start + cardWidth + index * (cardWidth + gap);
+      return <line x1={x} y1="94" x2={x + gap} y2="94" />;
+    })}
     {diagram.steps.map((step, index) => {
-      const x = [40, 290, 540][index];
-      return <g><rect x={x} y="44" width="140" height="100" rx="18" /><text x={x + 70} y="84" text-anchor="middle">{step.split(' + ')[0]}</text>{step.includes(' + ') && <text x={x + 70} y="108" text-anchor="middle">+ {step.split(' + ')[1]}</text>}</g>;
+      const x = start + index * (cardWidth + gap);
+      const words = step.split(' ');
+      const first = words.slice(0, Math.ceil(words.length / 2)).join(' ');
+      const second = words.slice(Math.ceil(words.length / 2)).join(' ');
+      return <g>
+        <rect x={x} y="44" width={cardWidth} height="100" rx="18" />
+        <text x={x + cardWidth / 2} y={second ? 82 : 98} text-anchor="middle">{first}</text>
+        {second && <text x={x + cardWidth / 2} y="108" text-anchor="middle">{second}</text>}
+      </g>;
     })}
   </svg>
   <figcaption>{diagram.caption}</figcaption>
