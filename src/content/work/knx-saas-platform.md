@@ -14,13 +14,38 @@ Community events often rely on disconnected tools for registration, payments, co
 
 The live platform is available at [knx-go.com](https://knx-go.com).
 
+<figure class="case-image">
+  <img src="/images/knx/events-discovery.png" alt="KNX events discovery screen showing event cards and filters" />
+  <figcaption>Event discovery experience: browse upcoming events by region, format, and view.</figcaption>
+</figure>
+
 ## My responsibilities
 
 As product owner, I define product direction and roadmap priorities, translate user needs into product design and technical decisions, and guide integration and implementation work.
 
+<figure class="case-image case-image-narrow">
+  <img src="/images/knx/role-flow.png" alt="Diagram showing visitor, member, organizer, and administrator roles in KNX" />
+  <figcaption>Role model: experiences expand from visitor to member, organizer, and platform administration.</figcaption>
+</figure>
+
 ## Technical decisions and execution
 
 I mapped the needs of each participant group into distinct roles and platform workflows. The product is built with React, Supabase and PostgreSQL, with Stripe Connect for payment capabilities. I prioritized connected foundations—event management, ticketing, permissions, messaging, administration, and integrations—so individual features support an end-to-end experience.
+
+<figure class="case-image">
+  <img src="/images/knx/community-discovery.png" alt="KNX community discovery landing screen with dance event photography" />
+  <figcaption>Community discovery experience designed to connect people with local events, instructors, and dance communities.</figcaption>
+</figure>
+
+<figure class="case-image case-image-narrow">
+  <img src="/images/knx/event-detail-mobile.png" alt="KNX mobile event-detail screen for Swing City Chicago" />
+  <figcaption>Mobile event detail experience, including event tags and an external-listing status notice.</figcaption>
+</figure>
+
+<figure class="case-image">
+  <img src="/images/knx/platform-architecture.png" alt="KNX architecture diagram connecting user roles, React application, Stripe Connect, and Supabase" />
+  <figcaption>Platform architecture: React and React Query connect user workflows with Stripe Connect and Supabase services.</figcaption>
+</figure>
 
 ## Outcome and lessons learned
 

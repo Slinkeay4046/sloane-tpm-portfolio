@@ -5,6 +5,11 @@
   --font-body: "Public Sans", system-ui, sans-serif; --font-brand: Rubik, system-ui, sans-serif;
 }
 
+.case-image { max-width: 65ch; margin: 2.5rem auto; }
+.case-image img { display: block; width: 100%; height: auto; border: 1px solid var(--gray-800); border-radius: 1rem; box-shadow: 0 10px 28px #090b111c; }
+.case-image-narrow { max-width: 28rem; }
+.case-image figcaption { margin-top: .65rem; color: var(--gray-400); font-size: .875rem; text-align: center; }
+
 /* Keep the portrait as a supporting element beside the introduction on tablet and desktop. */
 @media (min-width: 40em) {
   .home-hero { grid-template-columns: minmax(0, 1fr) minmax(10rem, 12rem); }
